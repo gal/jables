@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Jables",
+  "description": "A friendly interface to the experimental window.ai feature in browsers.",
+  "version": "0.1",
+  "action": {
+    "default_popup": "index.html"
+  },
+  "permissions": ["contextMenus", "activeTab", "scripting"],
+  "background": {
+    "service_worker": "scripts/background.js"
+  },
+  "content_scripts": [
+    {
+      "js": ["scripts/inject.js"],
+      "matches": ["http://*/*", "https://*/*"]
+    }
+  ]
+}
